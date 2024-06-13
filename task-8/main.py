@@ -1,5 +1,6 @@
 # Class: OnesThreesNines
-# Objective: Create a class `OnesThreesNines` that calculates the minimum number of ones, threes, and nines needed to sum up to a given integer.
+# Objective: Create a class `OnesThreesNines` that calculates the minimum number of ones, 
+# threes, and nines needed to sum up to a given integer.
 # The result should be stored in a variable `self.answer` in the format: "nines:x, threes:y, ones:z".
 # Parameters:
 # - An integer between 0 and 26.
@@ -10,7 +11,17 @@
 # - After the comma, you must put a space.
 
 class OnesThreesNines:
-    pass
+    def __init__(self, number) -> None:
+        self.number = number
+        self.answer = self.calc()
+
+    def calc(self):
+        nines = self.number // 9
+        temp = self.number % 9
+        threes = temp // 3
+        ones = temp % 3
+        return f"nines: {nines}, threes: {threes}, ones: {ones}"
+
 
 # Examples:
 otn1 = OnesThreesNines(10)

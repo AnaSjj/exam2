@@ -9,8 +9,11 @@
 # Returns:
 # - A list of strings, each string consisting of the given character repeated n times.
 
+def make_rug(m, n, proc="#"):
+    return [n*proc for i in range(m)]
+
 
 # Examples:
-# print(make_rug(3, 5))       # Expected: ["#####", "#####", "#####"]
-# print(make_rug(3, 5, '$'))  # Expected: ["$$$$$", "$$$$$", "$$$$$"]
-# print(make_rug(2, 2, 'A'))  # Expected: ["AA", "AA"]
+print(make_rug(3, 5))       # Expected: ["#####", "#####", "#####"]
+print(make_rug(3, 5, '$'))  # Expected: ["$$$$$", "$$$$$", "$$$$$"]
+print(make_rug(2, 2, 'A'))  # Expected: ["AA", "AA"]

@@ -1,3 +1,5 @@
+from decimal import Decimal, ROUND_HALF_UP
+
 # Filter and Calculate Average Age of Adult Users
 # Objective: Write a function `calculate_average_age_of_adults` that takes an array of user objects and returns
 # the average age of all adult users as a numeric value. Only users who are 18 years or older are considered adults.
@@ -6,8 +8,12 @@
 # - The function should compute the average of the 'age' values for the remaining adult user objects.
 # - The result should be rounded to two decimal places if necessary.
 
+
 def calculate_average_age_of_adults(users):
-    pass
+    avg_age = [users[i].get("age") for i in range(len(users))
+               if users[i].get("age") >= 18]
+    return Decimal((sum(avg_age) / len(avg_age))).quantize(Decimal('0.00'), rounding=ROUND_HALF_UP)
+
 
 # Example user data
 users = [
